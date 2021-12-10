@@ -18,10 +18,13 @@ def yarrowia_farnesene(filename):
     print("Exchanges: ", base_model.exchanges)
     print("Demands: ", base_model.demands)
     print("Sinks: ", base_model.sinks)
-    # optimize for growth
-    add_loopless(base_model)
-    solution = base_model.optimize()
-    pprint(solution)
+    print("\n")
+    # Optimize for growth
+    # print("Eliminating loops")
+    # add_loopless(base_model)
+    # print("\n\nOptimizing...\n")
+    base_model.optimize()
+    print(base_model.summary())
     # do some fancy output
 
     # introduce pathway for farnesene production

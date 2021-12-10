@@ -10252,7 +10252,7 @@
           <speciesReference species="M_gly_b" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
-      <reaction id="R_EX_glyc_e_" name="R_Glycerol_exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_0_bound">
+      <reaction id="R_EX_glyc_e_" name="R_Glycerol_exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: S_</p>
