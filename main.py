@@ -7,22 +7,34 @@ from cobra.io import read_sbml_model, validate_sbml_model
 
 
 def validate_model_with_output(filename):
+    """Use cobra tools to validate the model, print the results."""
     report = validate_sbml_model(filename)
     pprint(report)
 
 
+def inspect_model(model, filename):
+    """Inspect the provided SBML model behind filename, and provide basic info about the loaded model."""
+    validate_model_with_output(filename)
+
+    print("\nExchanges: ")
+    pprint([reaction.name for reaction in model.exchanges])
+    print("\nDemands: ")
+    pprint([reaction.name for reaction in model.demands])
+    print("\nSinks: ")
+    pprint([reaction.name for reaction in model.sinks])
+
+
 def yarrowia_farnesene(filename):
+    """Core function of the project. Orchestrates the calling of other functions and passes data between them."""
     # load metabolic model from disk
     base_model = read_sbml_model(filename)
-    validate_model_with_output(filename)
-    print("Exchanges: ", base_model.exchanges)
-    print("Demands: ", base_model.demands)
-    print("Sinks: ", base_model.sinks)
-    print("\n")
+
+    inspect_model(base_model, filename)
+
     # Optimize for growth
-    # print("Eliminating loops")
+    # print("\nEliminating loops")
     # add_loopless(base_model)
-    # print("\n\nOptimizing...\n")
+    print("\n\nOptimizing...\n")
     base_model.optimize()
     print(base_model.summary())
     # do some fancy output
@@ -42,8 +54,5 @@ def yarrowia_farnesene(filename):
     # with optimized strain, do reactor simulations
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     yarrowia_farnesene('./gsmm/kavscek_2015/MODEL1510060001_SBML3.xml')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
