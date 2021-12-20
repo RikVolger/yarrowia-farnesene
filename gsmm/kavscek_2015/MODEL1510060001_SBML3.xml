@@ -1584,7 +1584,7 @@
           <speciesReference species="M_gua_b" stoichiometry="1" constant="true"/>
         </listOfReactants>
       </reaction>
-      <reaction metaid="meta_R_EX_h2o_b" sboTerm="SBO:0000627" id="R_EX_h2o_b" name="EX_h2o_b" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction metaid="meta_R_EX_h2o_b" sboTerm="SBO:0000627" id="R_EX_h2o_b" name="EX_h2o_b" reversible="true" fast="false" fbc:lowerFluxBound="minus_inf" fbc:upperFluxBound="plus_inf">
         <listOfReactants>
           <speciesReference species="M_h2o_b" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -10179,11 +10179,11 @@
             <p>SUBSYSTEM: S_</p>
           </html>
         </notes>
+          <speciesReference species="M_glc_D_b" stoichiometry="1" constant="true"/>
         <listOfReactants>
-          <speciesReference species="M_glc_D_e" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_glc_D_b" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glc_D_e" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
@@ -10252,7 +10252,7 @@
           <speciesReference species="M_gly_b" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
-      <reaction id="R_EX_glyc_e_" name="R_Glycerol_exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_EX_glyc_e_" name="R_Glycerol_exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_0_bound">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: S_</p>
@@ -10304,7 +10304,7 @@
           <speciesReference species="M_gua_b" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
-      <reaction id="R_EX_h2o_e_" name="R_H2O_exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_EX_h2o_e_" name="R_H2O_exchange" reversible="true" fast="false" fbc:lowerFluxBound="minus_inf" fbc:upperFluxBound="plus_inf">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: S_</p>
